@@ -20,9 +20,6 @@ if __name__ == "__main__":
         }
     }, sort=[('_id', pymongo.DESCENDING)])
 
-    processed = 0
-    to_queue = 0
-    skipped = 0
     try:
         for i in source:
             id = str(i.get("id"))
@@ -38,6 +35,3 @@ if __name__ == "__main__":
         print(e)
 
     print("SELESAI CUK")
-    print("processed:", processed)
-    print("to_queue", to_queue)
-    print("skipped", skipped)
