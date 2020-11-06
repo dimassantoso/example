@@ -2,9 +2,6 @@ from decouple import config
 
 
 class Config:
-    MONGO_HOST = config("MONGO_HOST")
-    MONGO_DB = config("MONGO_DB")
-    MONGO_COLLECTION = config("MONGO_COLLECTION")
     CELERY_BROKER = config("CELERY_BROKER")
     CELERY_BACKEND = config("CELERY_BACKEND")
     CELERY_RESULT_EXPIRED = config("CELERY_RESULT_EXPIRED")
@@ -14,3 +11,8 @@ class Config:
     END_DATE = config("END_DATE")
     PACK = config("PACK").split(",")
     MODULE = config("MODULE")
+    LIMIT = config("LIMIT")
+    HEADER = {
+        "Content-Type": "application/json",
+        'Authorization': "Bearer {}".format(ACTIVITY_TOKEN)
+    }

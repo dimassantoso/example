@@ -8,18 +8,13 @@ from run_celery import CELERY
 def update_logs(self, id, logs):
     max_retries = self.max_retries
     try:
-        header = {
-            "Content-Type": "application/json",
-            'Authorization': "Bearer {}".format(Config.ACTIVITY_TOKEN)
-        }
-
         payload = {
             "logs": logs
         }
         r = requests.put(
             Config.ACTIVITY_HOST + "/v2/logs/{}".format(id),
             json=payload,
-            headers=header,
+            headers=Config.HEADER,
             timeout=5
         )
 
