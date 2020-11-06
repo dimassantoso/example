@@ -10,7 +10,8 @@ class Config:
     START_DATE = config("START_DATE")
     END_DATE = config("END_DATE")
     MODULE = config("MODULE")
-    LIMIT = config("LIMIT")
+    LIMIT = int(config("LIMIT"))
+    PAGE = int(config("PAGE"))
     HEADER = {
         "Content-Type": "application/json",
         'Authorization': "Bearer {}".format(ACTIVITY_TOKEN)

@@ -15,11 +15,11 @@ def update_logs(self, id, logs):
             Config.ACTIVITY_HOST + "/v2/logs/{}".format(id),
             json=payload,
             headers=Config.HEADER,
-            timeout=5
+            timeout=10
         )
 
         if r.status_code == 200:
-            return True
+            return r.json()["message"]
         raise Exception(r.json())
 
     except Exception as e:
