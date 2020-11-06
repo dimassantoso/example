@@ -8,6 +8,7 @@ if __name__ == "__main__":
     count_update = 0
     try:
         for page in range(1, Config.PAGE+1):
+            print("page : {}/{}".format(page, Config.PAGE))
             r = requests.get(Config.ACTIVITY_HOST +
                              "/v2/logs?limit={}&page={}&phrase[module]={}&dateFrom={}&dateTo={}"
                              .format(Config.LIMIT, page, Config.MODULE, Config.START_DATE, Config.END_DATE),
