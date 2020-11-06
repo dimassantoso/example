@@ -9,7 +9,6 @@ class Config:
     ACTIVITY_TOKEN = config("ACTIVITY_TOKEN")
     START_DATE = config("START_DATE")
     END_DATE = config("END_DATE")
-    PACK = config("PACK").split(",")
     MODULE = config("MODULE")
     LIMIT = config("LIMIT")
     HEADER = {
